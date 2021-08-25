@@ -6,10 +6,11 @@ Route::view('/', 'welcome');
 
 Route::group(['prefix' => 'admin',
               'namespace' => 'Admin',
-              'middleware' => 'auth'
-          ],
+              'middleware' => 'auth'],
 function() {
     Route::get('/', 'AdminController@index')->name('dashboard');
+
+    Route::resource('users', 'UserController');
 });
 
 Route::get('profile', 'ProfileController@edit')
@@ -17,8 +18,6 @@ Route::get('profile', 'ProfileController@edit')
 
 Route::put('profile', 'ProfileController@update')
             ->name('profile.update');
-
-Route::resource('users', 'UserController');
 
 Auth::routes();
 

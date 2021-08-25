@@ -6,7 +6,7 @@
 
         <div class="d-flex justify-align-center justify-content-between">
             <h5 class="font-weight-bold">Usuarios Del Sistema</h5>
-            <a class="btn btn-info btn-sm" href="#">Nuevo Usuario</a>
+            <a class="btn btn-info btn-sm" href="{{ route('users.create') }}">Nuevo Usuario</a>
         </div>
 
         <div class="table-responsive">

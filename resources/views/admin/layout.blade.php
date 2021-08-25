@@ -11,13 +11,13 @@
         <title>Gentelella Alela! | </title>
 
         <!-- Bootstrap -->
-        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Font Awesome -->
-        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
         <!-- bootstrap-progressbar -->
-        <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <link href="{{ asset('vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
         <!-- Custom Theme Style -->
-        <link href="../build/css/custom.min.css" rel="stylesheet">
+        <link href="{{ asset('build/css/custom.min.css') }}" rel="stylesheet">
     </head>
 
     <body class="nav-md">
@@ -34,7 +34,7 @@
                         <!-- menu profile quick info -->
                         <div class="profile clearfix">
                             <div class="profile_pic">
-                                <img src="images/user.png" alt="..." class="img-circle profile_img">
+                                <img src="{{ asset('images/user.png') }}" alt="..." class="img-circle profile_img">
                             </div>
                             <div class="profile_info">
                                 <span>Bienvenid@,</span>
@@ -61,6 +61,7 @@
 
                 <!-- page content -->
                 <div class="right_col" role="main">
+                    @include('partials.session')
                     @yield('content')
                 </div>
 
@@ -78,13 +79,13 @@
         </div>
 
         <!-- jQuery -->
-        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <script src="{{ asset('vendors/jquery/dist/jquery.min.js') }}"></script>
         <!-- Bootstrap -->
-        <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
         <!-- bootstrap-progressbar -->
-        <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="{{ asset('vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
         <!-- Custom Theme Scripts -->
-        <script src="../build/js/custom.min.js"></script>
+        <script src="{{ asset('build/js/custom.min.js') }}"></script>
 
     </body>
 </html>
