@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
+Route::group(['prefix' => 'admin',
+              'namespace' => 'Admin',
+              'middleware' => 'auth'
+          ],
+function() {
+    Route::get('/', 'AdminController@index')->name('dashboard');
+});
+
 Route::get('profile', 'ProfileController@edit')
             ->name('profile.edit');
 
