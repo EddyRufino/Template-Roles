@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\UsuariosRequest;
 
@@ -19,12 +20,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->paginate(7);
-        return view('users.index', compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
     public function create()
     {
-        return view('users.create', [
+        return view('admin.users.create', [
             'roles' => Role::pluck('display_name', 'id'),
             'user' => new User
         ]);
@@ -45,7 +46,7 @@ class UserController extends Controller
     {
         // $this->authorize('show', $user);
 
-        return view('users.show', compact('user'));
+        return view('admin.users.show', compact('user'));
     }
 
     public function edit(User $user)
@@ -54,7 +55,7 @@ class UserController extends Controller
 
         $roles = Role::pluck('display_name', 'id');
 
-        return view('users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     public function update(ProfileRequest $request, User $user)
