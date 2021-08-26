@@ -49,15 +49,18 @@
             </li>
         </ul>
     </div>
-    <div class="menu_section">
-        <h3>Roles</h3>
-        <ul class="nav side-menu">
-            <li><a><i class="fa fa-users"></i> Usuarios Sistema <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{ route('users.index') }}">Listar Usuarios</a></li>
-                    <li><a href="{{ route('users.create') }}">Nuevo Usuario</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+
+    @admin
+        <div class="menu_section">
+            <h3>Roles</h3>
+            <ul class="nav side-menu">
+                <li><a><i class="fa fa-users"></i> Usuarios Sistema <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{{ route('users.index') }}">Listar Usuarios</a></li>
+                        <li><a href="{{ route('users.create') }}">Nuevo Usuario</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    @endadmin
 </div>
